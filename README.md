@@ -1,31 +1,11 @@
-# Warbler (Front-End)
+# Drumming Notation Study: Frontend
 
-![Team Photo](https://github.com/dartmouth-cs98/21f-warbler-frontend-cs98/blob/main/team_pic.png)
+This repo contains the front-end for the Drumming Notation Study run by the Cognitive Neuroscience Lab at Dartmouth College. It was created for the thesis "Improving music education using biofeedback-based cognitive tutoring" by Jordan Sanz '22. 
 
-*Hi! We're Warbler. Come learn music with us!*
+##  Instructions to run
+To run the application, run the following commands: 
 
-## Architecture
 
-[Front-End repo](https://github.com/dartmouth-cs98/21f-warbler-frontend-cs98)
+## Acknowledgements
 
-[Back-End repo](https://github.com/dartmouth-cs98/21f-warbler-backend)
-
-[Pitch API repo](https://github.com/dartmouth-cs98/21f-warbler-pitch-api)
-
-## Setup
-
-TODO: how to get the project dev environment up and running, npm install etc
-
-## Deployment
-
-The site is currently deployed at [Warbler](warblermusic.com)
-
-## Authors
-
-Jordan Sanz  
-Sathvi Korandla  
-Gia Kim  
-Shane Hewitt  
-Jacob Donoghue
-
-## Acknowledgments
+The original version of the rhythm activity comes from the Warbler app and Warbler team, including Jacob Donoghue '22, Shane Hewitt '22, Sathvi Korandla '22, and Gia Kim '23. 
