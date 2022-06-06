@@ -5,6 +5,8 @@ This repo contains the front-end for the Drumming Notation Study run by the Cogn
 ##  Instructions to run
 To run the application, run the following commands: 
 
+1. `yarn run`
+2. 
 
 ## Acknowledgements
 
