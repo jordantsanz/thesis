@@ -1,5 +1,5 @@
 {
-  "name": "warbler",
+  "name": "thesis",
   "version": "1.0.0",
   "main": "src/index.js",
   "browser": {
@@ -7,22 +7,10 @@
     "path": false,
     "os": false
   },
-  "repository": "https://github.com/dartmouth-cs98/Warbler-Frontend.git",
+  "repository": "https://github.com/jordantsanz/thesis.git",
   "contributors": [
     {
-      "name": "Shane Hewitt"
-    },
-    {
       "name": "Jordan Sanz"
-    },
-    {
-      "name": "Sathvika Korandla"
-    },
-    {
-      "name": "Gia Kim"
-    },
-    {
-      "name": "Jacob Donoghue"
     }
   ],
   "license": "MIT",
@@ -119,5 +107,5 @@
     "vexflow": "^3.0.9",
     "wav-decoder": "^1.3.0"
   },
-  "author": "Shane Hewitt <shane.c.hewitt.22@dartmouth.edu>"
+  "author": "Jordan Sanz <jordan.t.sanz.22@dartmouth.edu>"
 }

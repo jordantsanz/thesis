@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getUserInfo, setUserMTurkID } from '../actions';
+import { setUserMTurkID } from '../actions';
 // import RhythmWrapper from './RhythmWrapper';
 import LessonWrapper from './LessonWrapper';
 // import Start from './Start';
@@ -30,7 +30,6 @@ const App = (props) => {
   setUserMTurkID(idWithoutSlash);
   if (idToken && props.user.username === null) {
     console.log(localStorage);
-    props.getUserInfo();
   } else {
     props.setUserMTurkID(idWithoutSlash);
   }
@@ -49,4 +48,4 @@ function mapStateToProps(reduxState) {
   };
 }
 
-export default connect(mapStateToProps, { getUserInfo, setUserMTurkID })(App);
+export default connect(mapStateToProps, { setUserMTurkID })(App);

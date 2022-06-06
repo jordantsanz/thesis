@@ -12,8 +12,8 @@ import { useReactMediaRecorder } from 'react-media-recorder';
 import Timer from 'react-compound-timer';
 import { Dots } from 'loading-animations-react';
 import {
-  getLesson, uploadVideo, submitAttempt, registerClick,
-  resetAllCorrectness, getAccuracyPercentAndErrorPercent, sendVideo, assignXP, updateUserStats, getRandomLesson, registerLessonCompletion, registerLessonAttempt, getUserInfo, updateLevel, assignCoins,
+  uploadVideo, submitAttempt, registerClick,
+  resetAllCorrectness, getAccuracyPercentAndErrorPercent, sendVideo, getRandomLesson,
 } from '../actions';
 import ViewContent from './ViewContent';
 import NextButton from './Exercises/NextButton';
@@ -148,7 +148,7 @@ class Lesson extends Component {
       if (id === 'random') {
         // console.log('getting random lesson');
       } else {
-        this.props.getLesson(id, this.props.history, false);
+        // this.props.getLesson(id, this.props.history, false);
       }
     }
 
@@ -184,10 +184,10 @@ class Lesson extends Component {
       // console.log('going to next!!', type, attempts);
       if (this.state.currentPage > this.props.lesson.pages.length - 1) {
         if (!this.state.random) {
-          this.props.registerClick('LessonCompleteClicked');
-          this.props.registerLessonCompletion(this.props.lesson._id, this.props.user.id);
+          // this.props.registerClick('LessonCompleteClicked');
+          // this.props.registerLessonCompletion(this.props.lesson._id, this.props.user.id);
         }
-        this.props.getUserInfo();
+        // this.props.getUserInfo();
       }
       this.setState((prevstate) => ({ pagesCompleted: true, determiningCompletion: true }));
       // console.log('finished going to next');
@@ -482,16 +482,8 @@ function mapStateToProps(reduxState) {
 }
 
 export default withRouter(connect(mapStateToProps, {
-  getLesson,
-  assignXP,
   sendVideo,
-  updateUserStats,
   getRandomLesson,
-  registerLessonCompletion,
-  registerLessonAttempt,
-  getUserInfo,
-  updateLevel,
-  assignCoins,
   getAccuracyPercentAndErrorPercent,
   resetAllCorrectness,
   submitAttempt,
