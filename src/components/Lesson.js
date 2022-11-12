@@ -413,7 +413,7 @@ class Lesson extends Component {
             <div className="rt-center">
               <div className="rt-lesson-subtitle">Activity</div>
             </div>
-            {pages[14]}
+            {pages[this.state.currentPage - 1]}
             {this.renderNextButton()}
 
           </div>
