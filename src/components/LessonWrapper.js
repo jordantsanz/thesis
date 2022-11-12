@@ -13,8 +13,6 @@ const LessonWrapper = () => {
   const {
     start, pause, seconds, minutes,
   } = useStopwatch({ autoStart: false });
-  // eslint-disable-next-line no-unused-vars
-  const [stopwatch, setStopwatch] = useState(null);
   expiryTimestamp.setMinutes(expiryTimestamp.getMinutes() + 35);
   const timer = useTimer({
     expiryTimestamp,
@@ -47,7 +45,6 @@ const LessonWrapper = () => {
     const timerStats = { minutes: timer == null ? 0 : timer.minutes, seconds: timer == null ? 0 : timer.seconds };
     const stopwatchStats = { minutes, seconds };
     const string = randomstring.generate(19);
-    console.log('string: ', string);
     submitFinalTimeResults(userId, timerStats, stopwatchStats, string);
     dispatch({ type: ActionTypes.SET_FINAL_STRING, payload: { string } });
   };

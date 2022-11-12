@@ -1,15 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable camelcase */
-/* eslint-disable jsx-a11y/media-has-caption */
-/* eslint-disable no-param-reassign */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-plusplus */
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable camelcase */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { useReactMediaRecorder } from 'react-media-recorder';
-import Timer from 'react-compound-timer';
 import { Dots } from 'loading-animations-react';
 import {
   uploadVideo, submitAttempt, registerClick,
@@ -18,16 +12,11 @@ import {
 import ViewContent from './ViewContent';
 import NextButton from './Exercises/NextButton';
 import { resultPercentRanges, resultWords } from '../lib/constants';
-// import Rhythm from './Rhythm';
 import RhythmNew from './RhythmNew';
-import InfinityIntro from './InfinityIntro';
+import InfinityIntro from './Intro';
 
 const Page = (props) => {
-  // console.log('thepageprops', props);
   const stopped = (url, blob) => {
-    // console.log(blob);
-    // console.log('in stopped');
-    // eslint-disable-next-line no-unused-vars
     const myFile = new File(
       [blob],
       `${props.id}-${props.lesson_id}-${props.attempt}.mp4`,
@@ -39,8 +28,6 @@ const Page = (props) => {
   const {
     startRecording,
     stopRecording,
-    mediaBlobUrl,
-    status,
   } = useReactMediaRecorder({
     video: true, audio: true, onStop: stopped, blobPropertyBag: { type: 'video/mp4' },
   });
@@ -53,29 +40,6 @@ const Page = (props) => {
     if (props.page.info.activity_type === 'Rhythm-Sensing') {
       return (
         <div>
-          {/* <Rhythm
-            percentage={props.percentage}
-            xp={props.xp}
-            stopRecording={stopRecording}
-            status={status}
-            startRecording={startRecording}
-            instructions={props.page.info.r.instructions}
-            activityID={props.page._id}
-            notes={props.page.info.r.notes}
-            timeSignature={props.page.info.r.time_signature}
-            keys={props.page.info.r.keys}
-            bpm={props.halfSpeed ? 55 : props.page.info.r.bpm}
-            goToNext={props.goToNext}
-            lives={props.lives}
-            registerCompletion={props.registerCompletion}
-            infinity={props.infinity}
-            level={props.level}
-            type={type}
-            changePage={props.changePage}
-            pageCount={props.pageCount}
-            currentPage={props.currentPage}
-            makeNewAttempt={props.makeNewAttempt}
-          /> */}
           <RhythmNew
             notes={props.page.info.r.notes}
             timeSignature={props.page.info.r.time_signature}
@@ -89,7 +53,6 @@ const Page = (props) => {
             stopRecording={stopRecording}
             startRecording={startRecording}
             lesson_id={props.lesson_id}
-            // bpm={props.halfSpeed ? 55 : props.page.info.r.bpm}
             bpm={props.page.info.r.bpm}
             startStopwatch={props.startStopwatch}
             stopStopwatch={props.stopStopwatch}
@@ -203,7 +166,7 @@ class Lesson extends Component {
     const pagesList = [];
     const instructionPagesList = [];
 
-    for (let i = 0; i < lesson.pages.length; i++) {
+    for (let i = 0; i < lesson.pages.length; i += 1) {
       // console.log('in loop with page', lesson.pages[i]);
       const percentage = parseInt(100 * (i / lesson.pages.length), 10);
       // console.log('percentage:', i, '--', percentage);
@@ -418,7 +381,6 @@ class Lesson extends Component {
 
           </div>
         );
-        ///  NEED TO CHANGE FOR REAL: should be facialAffect !== -1 for face condition
       } else if (this.state.determiningCompletion && this.props.correctness.errorPercent !== -1 && this.props.correctness.accuracyPercent !== -1 && this.props.correctness.affectPercent !== -1) {
         return (
           <div className="infinity">
@@ -429,7 +391,6 @@ class Lesson extends Component {
                 <br />
                 <li className="rt-result">Accuracy Percent: {this.determineResultWord(this.props.correctness.accuracyPercent)} </li>
                 <br />
-                {/* <li className="rt-result">Affect Percent: {this.props.correctness.affectPercent} </li> */}
                 <br />
                 <br />
                 <br />

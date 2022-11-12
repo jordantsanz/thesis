@@ -1173,6 +1173,7 @@ and an eighth note takes up half of a beat.
   image: '',
 };
 
+// some lessons removed in final for faster process
 const instructionPages = [iPage1, iPage2, iPage3, iPage4, iPage5,
   iPage7, iPage8, iPage9, iPage10, iPage11,
   // iPage1, iPage2, iPage3, iPage4, iPage5, iPage6,

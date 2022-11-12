@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import timeSignature from '../images/4-4.png';
 import percussion from '../images/percussion.png';
@@ -75,7 +74,7 @@ const imageArray = [questionMark,
 ];
 const altArray = ['alt1', 'alt2', 'alt3'];
 
-const InfinityText = ({ page }) => {
+const IntroText = ({ page }) => {
   return (
     <div className="infinity-text-holder-component">
       <img className="infinity-instructions-image" alt={altArray[page]} src={imageArray[page]} />
@@ -85,4 +84,4 @@ const InfinityText = ({ page }) => {
   );
 };
 
-export default InfinityText;
+export default IntroText;

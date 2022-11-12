@@ -252,7 +252,6 @@ class RhythmNew extends Component {
     // build times that each metronome is hit
     const metronomeHitTimes = [0, introTime * 1, introTime * 2, introTime * 3];
     const metronomeCount = this.props.lesson_id === 0 ? 16 : 48;
-    console.log('lessonid: ', this.props.lesson_id, metronomeCount);
     for (let i = 0; i < metronomeCount; i += 1) {
       metronomeHitTimes.push((i * millisecondsPerBeat) + introTime * 4);
     }
